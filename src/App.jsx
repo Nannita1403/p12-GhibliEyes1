@@ -24,7 +24,7 @@ function App() {
     transition="all 0.5s">
       <Header/>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>} />
         <Route path="/movies" element={<Movies/>} />
         <Route path="/movie/:id" element={<Movie/>} />

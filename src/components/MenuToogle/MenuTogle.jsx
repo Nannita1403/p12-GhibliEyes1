@@ -1,16 +1,18 @@
 'use client'
 
 import {
-  Box, Flex, Text, IconButton, Button, Stack, Collapse, Icon, Popover, PopoverTrigger, 
-  PopoverContent, useColorModeValue, useBreakpointValue, useDisclosure, Image,} from '@chakra-ui/react'
+  Box, Flex, Text, IconButton, Button, Stack, Collapse, Image,
+  useDisclosure} from '@chakra-ui/react'
 import {
   HamburgerIcon, CloseIcon,ChevronDownIcon, ChevronRightIcon,} from '@chakra-ui/icons'
 import { ThemeContext } from '../../providers/ThemePageProvider';
 import { useContext } from 'react';
 import ChangeTheme from '../ChangeTheme/ChangeTheme';
+import { DesktopNav } from './DesktopNav';
+import { MobileNav } from './MobileNav';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '/home'},
+  { label: 'Home', href: '/'},
   { label: 'About', href: '/about'},
   { label: 'Movies', href: '/movies'},
   { label: 'Favorites', href: '/favorites'},
@@ -39,15 +41,15 @@ export default function MenuToogle() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-        <Box>
-         <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'space-around' }}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+            <DesktopNav/>
+          </Flex>
+          <Box>
+           <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
            w= "100px" position= "center" top="20px" left="90px"
            alt="Ghibli Studio Logo"/>
           </Box>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
         </Flex>
 
         <Stack
@@ -79,97 +81,9 @@ export default function MenuToogle() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav/>
       </Collapse>
     </Box>
-  )
-}
-
-const DesktopNav = () => {
-  const {light, setLight} = useContext(ThemeContext);
-
-  return (
-    <Stack direction={'row'} spacing={4} alignContent={'center'} alignItems={'center'}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label} alignItems={'center'}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Box
-                as="a"
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={600}
-                color={`var(--${light ? "light" : "dark"}-mode-text)`}
-                _hover={{
-                  textDecoration: 'none',
-                  color:'#1D4044',
-                }}>
-                {navItem.label}
-              </Box>
-            </PopoverTrigger>
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  )
-}
-
-const MobileNav = () => {
-  return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  )
-}
-
-const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure()
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? '#'}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: 'none',
-        }}>
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
   )
 }
 
