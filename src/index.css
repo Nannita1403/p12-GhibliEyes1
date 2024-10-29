@@ -9,6 +9,8 @@
     --color-teal-400: #38B2AC;
     --color-teal-500: #26321c;
 
+    --color-gray-700:#3f3f46;
+    --color-gray-100:#f4f4f5;
   
     --light-mode-bg: var(--color-light);
     --dark-mode-bg: var(--color-dark-bg);
@@ -23,5 +25,8 @@
     /*Negativo para la letra de Botones o elementos*/
     --light-mode-text-negative: var(--color-light);
     --dark-mode-text-negative: var(--color-dark-font);
-  
+
+    /*Negativo para la letra de Botones o elementos*/
+    --light-mode-text-about: var(--color-gray-700);
+    --dark-mode-text-about: var(--color-gray-100);
   } 

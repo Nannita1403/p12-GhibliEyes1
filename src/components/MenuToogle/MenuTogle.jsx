@@ -35,12 +35,6 @@ export default function MenuToogle() {
           display={{ base: 'flex', md: 'none' }}
           alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
           <MobileNav/>
-          {/* <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          /> */}
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'space-around' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
