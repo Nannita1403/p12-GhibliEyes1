@@ -17,8 +17,7 @@ function App() {
   const {light}=useContext(ThemeContext);
 
   return (
-    <Box
-    minH='100svh' 
+    <Box minH={'100vh'}
     bg={`var(--${light ? "light" : "dark"}-mode-bg)`} 
     color={`var(--${light ? "light" : "dark"}-mode-text)`}
     transition="all 0.5s">
