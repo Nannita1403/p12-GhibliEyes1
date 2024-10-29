@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { label: 'Favorites', href: '/favorites'},
 ]
 export default function MenuToogle() {
-  const { isOpen, onToggle } = useDisclosure()
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
   const {light, setLight} = useContext(ThemeContext);
 
   return (
@@ -34,12 +34,13 @@ export default function MenuToogle() {
           flex={{ base: 1, md: 'auto' }} ml={{ base: -1 }}
           display={{ base: 'flex', md: 'none' }}
           alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
-          <IconButton
+          <MobileNav/>
+          {/* <IconButton
             onClick={onToggle}
             icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
-          />
+          /> */}
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'space-around' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -47,7 +48,7 @@ export default function MenuToogle() {
           </Flex>
           <Box>
            <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
-           w= "100px" position= "center" top="20px" left="90px"
+           w= "140px" position= "center" top="20px" left="90px"
            alt="Ghibli Studio Logo"/>
           </Box>
         </Flex>
@@ -80,9 +81,8 @@ export default function MenuToogle() {
         <ChangeTheme/>
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav/>
-      </Collapse>
+
+
     </Box>
   )
 }

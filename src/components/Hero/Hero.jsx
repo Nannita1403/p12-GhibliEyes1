@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <Flex height={'100vh'} zIndex={'-1'} >       
         <Box objectFit={'cover'}  width={'100%'}>
-        <video src={'https://cdn.artstation.com/p/video_sources/000/146/133/2k.mp4'} autoPlay loop muted playsInline/>
+        <video  src={'https://cdn.artstation.com/p/video_sources/000/146/133/2k.mp4'} autoPlay loop muted playsInline/>
         </Box>
         <Box>
 
