@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+
+
 :root {
     --color-light: #f0f0f0;
     --color-dark: #23311a;
@@ -29,4 +32,8 @@
     /*Negativo para la letra de Botones o elementos*/
     --light-mode-text-about: var(--color-gray-700);
     --dark-mode-text-about: var(--color-gray-100);
+
+    --font-family-tittle: "Oregano", cursive ;
   } 
+
+  

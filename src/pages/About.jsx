@@ -1,6 +1,7 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
+import AboutHayao from "../assets/about/AboutHayao.jpg";
 
 const About = () => {
   const {light, setLight} = useContext(ThemeContext);
@@ -10,19 +11,20 @@ const About = () => {
     paddingTop={'30px'}>
       <Box max-width={'1280px'} paddingX={'20px'} paddingy={'0px'}>
         <Flex paddingTop={'70px'} display='flex' wrap='wrap'>
-      {/* Columna Izquiera */}
+        {/* Columna Izquiera */}
+         <Box id="ColIzq">
             {/* Titulo*/}
       <Box id="titles" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}
       paddingX={'4'} paddingY={'4'} marginBottom={'6'} borderLeftWidth={'4px'} borderColor={`var(--color-teal-400)`} >
       <Text textStyle="md">
         ABOUT OUR STORY
       </Text>
-      <Text marginTop={'8px'}fontFamily={'oregano'} fontSize={'30px'}>
+      <Text marginTop={'8px'}fontFamily={`var(--font-family-tittle)`} fontSize={'40px'} fontWeight={'600'}>
         Discovering Ghibli Magic
       </Text>
       </Box>
          {/* Contenido de Texto */}
-         <Box id="texts" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}>
+        <Box id="texts" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}>
          <Text paddingX={'16px'} marginBottom={'20px'} fontSize={'1rem'} lineHeight={'28px'}>
             Hey there ૮ ˶ᵔ ᵕ ᵔ˶ ა! Let&apos;s dive into the magical world of
             Studio Ghibli 🌱, co-founded in &apos;85 by the dynamic duo of
@@ -61,11 +63,16 @@ const About = () => {
             masterpiece in the works! Stay tuned for more enchanting tales!
             ✨
           </Text>
-          </Box>     
-      <Box>
-      </Box>
-      {/* Columna Derecha Imagen */}
-      </Flex>
+        </Box>     
+         </Box>
+        {/* Columna Derecha Imagen */}
+        <Box className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 relative overflow-hidden">
+            <Image
+              src={AboutHayao} alt="Image Hayao Gibli Studio"
+              _loading={'lazy'} objectFit={'cover'} width={'full'} height={'full'} borderRadius={'12px'}
+            />
+          </Box>
+        </Flex>
       </Box>
     </Flex>
     </>
