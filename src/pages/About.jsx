@@ -15,11 +15,11 @@ const About = () => {
          <Box id="ColIzq">
             {/* Titulo*/}
       <Box id="titles" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}
-      paddingX={'4'} paddingY={'4'} marginBottom={'6'} borderLeftWidth={'4px'} borderColor={`var(--color-teal-400)`} >
+      paddingX={'24px'} paddingY={'16px'} marginBottom={'24px'} borderLeftWidth={'8px'} borderColor={`var(--color-teal-400)`} >
       <Text textStyle="md">
         ABOUT OUR STORY
       </Text>
-      <Text marginTop={'8px'}fontFamily={`var(--font-family-tittle)`} fontSize={'40px'} fontWeight={'600'}>
+      <Text marginTop={'8px'}fontFamily={`var(--font-family-title)`} fontSize={'40px'} fontWeight={'600'}>
         Discovering Ghibli Magic
       </Text>
       </Box>
