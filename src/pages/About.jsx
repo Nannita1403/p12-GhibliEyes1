@@ -10,7 +10,7 @@ const About = () => {
     <Flex  id="about" bg={`var(--${light ? "light" : "dark"}-mode-bg)`}
     paddingTop={'30px'}>
       <Box max-width={'1280px'} paddingX={'20px'} paddingy={'0px'}>
-        <Flex paddingTop={'70px'} display='flex' wrap='wrap'>
+        <Flex paddingTop={'70px'} display='flex' wrap='nowrap'>
         {/* Columna Izquiera */}
          <Box id="ColIzq">
             {/* Titulo*/}
@@ -66,10 +66,10 @@ const About = () => {
         </Box>     
          </Box>
         {/* Columna Derecha Imagen */}
-        <Box className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 relative overflow-hidden">
+        <Box id="ColDer" width={{ base:'full', md:'1/2'}} paddingX={'16px'} marginBottom={{base:'40px', md:'0'}}  overflow={'hidden'}>
             <Image
               src={AboutHayao} alt="Image Hayao Gibli Studio"
-              _loading={'lazy'} objectFit={'cover'} width={'full'} height={'full'} borderRadius={'12px'}
+              objectFit={'cover'} width={'full'} height={'full'} borderRadius={'12px'}
             />
           </Box>
         </Flex>
