@@ -3,7 +3,7 @@ export const movies =[
     {
         "id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
         "title": "Spirited Away",
-        "original_title": "千と千尋の神隠し",
+        "japaneseTitle": "千と千尋の神隠し",
         "original_title_romanised": "Sen to Chihiro no kamikakushi",
         "image": "https://i.pinimg.com/736x/4b/b9/01/4bb9017bb6ac75815ef128bc3f8345a1.jpg",
         "gif":"https://c.tenor.com/J8Qs7sH2KmAAAAAC/tenor.gif",
@@ -32,7 +32,7 @@ export const movies =[
     {
       "id": "0440483e-ca0e-4120-8c50-4c8cd9b965d6",
       "title": "Princess Mononoke",
-      "original_title": "もののけ姫",
+      "japaneseTitle": "もののけ姫",
       "original_title_romanised": "Mononoke hime",
       "image": "https://i.pinimg.com/736x/0e/56/81/0e56819d6cc93392301fb93768c498c4.jpg",
       "gif":"https://c.tenor.com/v2V8avYcGtEAAAAd/tenor.gif",
@@ -72,7 +72,7 @@ export const movies =[
     {
         "id": "cd3d059c-09f4-4ff3-8d63-bc765a5184fa",
         "title": "Howl's Moving Castle",
-        "original_title": "ハウルの動く城",
+        "japaneseTitle": "ハウルの動く城",
         "original_title_romanised": "Hauru no ugoku shiro",
         "image":"https://i.pinimg.com/originals/75/e4/39/75e439b4d22958ddab94832e7ff83995.png",
         "gif":"https://c.tenor.com/TvwpulcZhz0AAAAC/tenor.gif",
@@ -101,7 +101,7 @@ export const movies =[
     {
         "id": "758bf02e-3122-46e0-884e-67cf83df1786",
         "title": "Ponyo",
-        "original_title": "崖の上のポニョ",
+        "japaneseTitle": "崖の上のポニョ",
         "original_title_romanised": "Gake no ue no Ponyo",
         "image":"https://posterspy.com/wp-content/uploads/2023/10/PONYO-RBV.jpg",
         "gif":"https://media.tenor.com/_xPsgmJ9IYQAAAAM/ponyo-boop.gif",
@@ -130,7 +130,7 @@ export const movies =[
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
       "title": "Castle in the Sky",
-      "original_title": "天空の城ラピュタ",
+      "japaneseTitle": "天空の城ラピュタ",
       "original_title_romanised": "Tenkū no shiro Rapyuta",
       "image":"https://i.pinimg.com/736x/20/1f/de/201fde75d599c765319e281118de3e3a.jpg",
       "gif":"https://c.tenor.com/cjKAMgp1RjYAAAAC/tenor.gif",
@@ -165,7 +165,7 @@ export const movies =[
     {
       "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
       "title": "Grave of the Fireflies",
-      "original_title": "火垂るの墓",
+      "japaneseTitle": "火垂るの墓",
       "original_title_romanised": "Hotaru no haka",
       "image": "https://i.pinimg.com/736x/19/f8/f8/19f8f8a1def1477ad04b63f9a8e4beee.jpg",
       "gif":"https://c.tenor.com/otZ6qsYEh54AAAAC/tenor.gif",
@@ -194,7 +194,7 @@ export const movies =[
     {
       "id": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
       "title": "My Neighbor Totoro",
-      "original_title": "となりのトトロ",
+      "japaneseTitle": "となりのトトロ",
       "original_title_romanised": "Tonari no Totoro",
       "image":"https://cdn.donmai.us/original/0c/77/0c7731701e20784a772e50db42f5d005.jpg",
       "gif":"https://c.tenor.com/OvaIh3Imo8cAAAAC/tenor.gif",
@@ -234,7 +234,7 @@ export const movies =[
     {
         "id": "ebbb6b7c-945c-41ee-a792-de0e43191bd8",
         "title": "Porco Rosso",
-        "original_title": "紅の豚",
+        "japaneseTitle": "紅の豚",
         "original_title_romanised": "Kurenai no buta",
         "image":"https://cdn.donmai.us/original/f3/09/f3099dab5daa7c14e893f556140f9dc5.jpg",
         "gif":"https://c.tenor.com/P_NLDhbe4pAAAAAC/tenor.gif",
@@ -263,7 +263,7 @@ export const movies =[
     {
         "id": "67405111-37a5-438f-81cc-4666af60c800",
         "title": "The Wind Rises",
-        "original_title": "風立ちぬ",
+        "japaneseTitle": "風立ちぬ",
         "original_title_romanised": "Kaze tachinu",
         "image":"https://posterspy.com/wp-content/uploads/2023/04/THE-WIND-RISES.jpg",
         "gif":"https://c.tenor.com/dFRmjNDK9TwAAAAC/tenor.gif",
@@ -292,7 +292,7 @@ export const movies =[
     {
       "id": "ea660b10-85c4-4ae3-8a5f-41cea3648e3e",
       "title": "Kiki's Delivery Service",
-      "original_title": "魔女の宅急便",
+      "japaneseTitle": "魔女の宅急便",
       "original_title_romanised": "Majo no takkyūbin",
       "image":"https://posterspy.com/wp-content/uploads/2024/06/KIKI.jpg",
       "gif":"https://c.tenor.com/aTkr2H01cjAAAAAd/tenor.gif",
@@ -327,7 +327,7 @@ export const movies =[
     {
         "id": "90b72513-afd4-4570-84de-a56c312fdf81",
         "title": "The Cat Returns",
-        "original_title": "猫の恩返し",
+        "japaneseTitle": "猫の恩返し",
         "original_title_romanised": "Neko no ongaeshi",
         "image":"https://i.pinimg.com/564x/30/1b/03/301b03dea30f77ad005f3fdf636706c0.jpg",
         "gif":"https://c.tenor.com/jEmf5vBUivAAAAAC/tenor.gif",
@@ -356,7 +356,7 @@ export const movies =[
     {
         "id": "112c1e67-726f-40b1-ac17-6974127bb9b9",
         "title": "Tales from Earthsea",
-        "original_title": "ゲド戦記",
+        "japaneseTitle": "ゲド戦記",
         "original_title_romanised": "Gedo senki",
         "image":"https://i.pinimg.com/564x/2d/ab/38/2dab3888657114cf37c90ea0b14d13a1.jpg",
         "gif":"https://c.tenor.com/BL7Ci24zWb0AAAAC/tenor.gif",
@@ -385,7 +385,7 @@ export const movies =[
     {
         "id": "2de9426b-914a-4a06-a3a0-5e6d9d3886f6",
         "title": "Arrietty",
-        "original_title": "借りぐらしのアリエッティ",
+        "japaneseTitle": "借りぐらしのアリエッティ",
         "original_title_romanised": "Karigurashi no Arietti",
         "image":"https://i.pinimg.com/564x/73/a2/ec/73a2ec953533b8018851f729cc9bc5f3.jpg",
         "gif":"https://c.tenor.com/sods74ZNzXoAAAAC/tenor.gif",
@@ -414,7 +414,7 @@ export const movies =[
     {
         "id": "45db04e4-304a-4933-9823-33f389e8d74d",
         "title": "From Up on Poppy Hill",
-        "original_title": "コクリコ坂から",
+        "japaneseTitle": "コクリコ坂から",
         "original_title_romanised": "Kokuriko zaka kara",
         "image":"https://i.pinimg.com/736x/9c/d3/b6/9cd3b67b55aede22c7716d5e928852f1.jpg",
         "gif":"https://c.tenor.com/TvovSpoHHZ0AAAAC/tenor.gif",
@@ -443,7 +443,7 @@ export const movies =[
     {
       "id": "4e236f34-b981-41c3-8c65-f8c9000b94e7",
       "title": "Only Yesterday",
-      "original_title": "おもひでぽろぽろ",
+      "japaneseTitle": "おもひでぽろぽろ",
       "original_title_romanised": "Omoide poro poro",
       "image":"https://i.pinimg.com/564x/6c/50/df/6c50dfa28a09836388b018b8835f7349.jpg",
       "gif":"https://c.tenor.com/hwbZGYGsuBwAAAAC/tenor.gif",
@@ -472,7 +472,7 @@ export const movies =[
     {
         "id": "ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
         "title": "Whisper of the Heart",
-        "original_title": "耳をすませば",
+        "japaneseTitle": "耳をすませば",
         "original_title_romanised": "Mimi wo sumaseba",
         "image":"https://i.pinimg.com/enabled_lo/564x/f6/5d/f9/f65df904661117908671cb97d0699c3d.jpg",
         "gif":"https://c.tenor.com/esHdjrFkePMAAAAC/tenor.gif",
@@ -501,7 +501,7 @@ export const movies =[
     {
       "id": "578ae244-7750-4d9f-867b-f3cd3d6fecf4",
       "title": "The Tale of the Princess Kaguya",
-      "original_title": "かぐや姫の物語",
+      "japaneseTitle": "かぐや姫の物語",
       "original_title_romanised": "Kaguya-Hime no Monogatari",
       "imagen":"https://i.pinimg.com/736x/3b/64/a8/3b64a83021a0af69bf5af853b5b5af5f.jpg",
       "gif":"https://c.tenor.com/tWSOakwILSsAAAAC/tenor.gif",
@@ -531,7 +531,7 @@ export const movies =[
     {
       "id": "1b67aa9a-2e4a-45af-ac98-64d6ad15b16c",
       "title": "Pom Poko",
-      "original_title": "平成狸合戦ぽんぽこ",
+      "japaneseTitle": "平成狸合戦ぽんぽこ",
       "original_title_romanised": "Heisei tanuki gassen Ponpoko",
       "image":"https://i.pinimg.com/736x/d9/03/d7/d903d73e28cc964d36e4ec93ed7f576e.jpg",
       "gif":"https://c.tenor.com/oDO7U8ZFqvoAAAAd/tenor.gif",
