@@ -19,21 +19,19 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 3).map((movie) => {
         const isReversed = movie.id % 2 === 0;
         return (
-          <div
-            className={`w-full px-4 flex ${
-              isReversed ? "flex-row-reverse" : "flex-row"
-            } items-center mt-20`}
-            key={movie.id}
-          >
-            <div
-              className={`w-1/3 bg-gradient-to-tl ${movie.gradient} rounded-xl shadow-lg p-2 aspect-square flex items-center justify-center text-white`}
+          <Flex key={movie.id} display={`flex ${isReversed ? "flex-row-reverse" : "flex-row"}`}
+          width={'full'} paddingX={'16px'} alignItems={'center'} marginTop={'80px'} >
+            <Box id="Movie detail" width={'1/3'} bgGradient={`linear(to-l, ${movie.gradient})`}
+            rounded={'12px'} shadow={'8px'} padding={'8px'} aspectRatio={1/1} flex={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}
             >
               <div className="flex flex-col p-4">
                 <h3 className="font-bold md:text-4xl">{movie.title}</h3>
                 <span className="lg:text-md">| {movie.year}</span>
-                <p className="lg:text-md italic mt-4">{movie.genres}</p>
+                <p className="lg:text-md italic mt-4">Director: {movie.director}</p>
+                <p className="lg:text-md italic mt-4">Producer: {movie.producer}</p>
               </div>
-            </div>
+            </Box>
+
             <div className="w-1/3 flex items-center justify-center">
               <div className="text-center text-black lg:text-3xl font-bold font-noto leading-tight writing-mode-vertical md:text-xl">
                 {movie.japaneseTitle.split("").map((char, idx) => (
@@ -58,7 +56,7 @@ export default function Movies() {
                 loading="lazy"
               />
             </div>
-          </div>
+          </Flex>
         );
       })}
     </>
