@@ -24,12 +24,12 @@ export default function Movies() {
             <Box id="Movie detail" width={'1/3'} bgGradient={`linear(to-l, ${movie.gradient})`}
             rounded={'12px'} shadow={'8px'} padding={'8px'} aspectRatio={1/1} flex={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}
             >
-              <div className="flex flex-col p-4">
-                <h3 className="font-bold md:text-4xl">{movie.title}</h3>
+              <Flex direction={'column'} padding={'16px'}>
+                <Text fon font className="font-bold md:text-4xl">{movie.title}</Text>
                 <span className="lg:text-md">| {movie.year}</span>
                 <p className="lg:text-md italic mt-4">Director: {movie.director}</p>
                 <p className="lg:text-md italic mt-4">Producer: {movie.producer}</p>
-              </div>
+              </Flex>
             </Box>
 
             <div className="w-1/3 flex items-center justify-center">
