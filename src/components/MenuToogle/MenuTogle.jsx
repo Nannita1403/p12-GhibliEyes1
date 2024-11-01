@@ -31,13 +31,13 @@ export default function MenuToogle() {
         minH={'60px'}
         >
         <Flex
-          flex={{ base: 1, md: 'auto' }} ml={{ base: -1 }}
+          flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}
           display={{ base: 'flex', md: 'none' }}
           alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
           <MobileNav/>
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'space-around' }}>
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+        <Flex flex={{ base: '1' }} justify={{ base: 'center', md: 'space-around' }}>
+          <Flex display={{ base: 'none', md: 'flex' }} ml={'10'}>
             <DesktopNav/>
           </Flex>
           <Box>

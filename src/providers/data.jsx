@@ -16,7 +16,7 @@ export const movies =[
         "year": "2001",
         "running_time": "124",
         "score": "97",
-        "gradient": "emerald.400, cyan.400",
+        "gradient": "teal.400, cyan.400",
         "people": [
           "https://ghibliapi.vercel.app/people/8228751c-bdc1-4b8d-a6eb-ca0eb909568f"
         ],
@@ -47,7 +47,7 @@ export const movies =[
       "year": "1997",
       "running_time": "134",
       "score": "92",
-      "gradient": "yellow.200, amber.500",
+      "gradient": "yellow.200, yellow.600",
       "people": [
         "https://ghibliapi.vercel.app/people/ba924631-068e-4436-b6de-f3283fa848f0",
         "https://ghibliapi.vercel.app/people/ebe40383-aad2-4208-90ab-698f00c581ab",
@@ -120,7 +120,7 @@ export const movies =[
         "year": "2008",
         "running_time": "100",
         "score": "92",
-        "gradient": "amber.500, pink.500",
+        "gradient": "yellow.600, pink.500",
         "people": [
           "https://ghibliapi.vercel.app/people/"
         ],
@@ -135,7 +135,7 @@ export const movies =[
         ],
         "url": "https://ghibliapi.vercel.app/films/758bf02e-3122-46e0-884e-67cf83df1786"
     },
-    {
+    { 
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
       "title": "Castle in the Sky",
       "japaneseTitle": "天空の城ラピュタ",
@@ -151,7 +151,7 @@ export const movies =[
       "year": "1986",
       "running_time": "124",
       "score": "95",
-      "gradient": "amber.500, lime.700",
+      "gradient": "yellow.600, green.700",
       "people": [
         "https://ghibliapi.vercel.app/people/598f7048-74ff-41e0-92ef-87dc1ad980a9",
         "https://ghibliapi.vercel.app/people/fe93adf2-2f3a-4ec4-9f68-5422f1b87c01",
@@ -188,7 +188,7 @@ export const movies =[
       "year": "1988",
       "running_time": "89",
       "score": "97",
-      "gradient": "sky.200, sky.600",
+      "gradient": "blue.200, blue.600",
       "people": [
         "https://ghibliapi.vercel.app/people/"
       ],
@@ -323,7 +323,7 @@ export const movies =[
       "year": "1989",
       "running_time": "102",
       "score": "96",
-      "gradient": "emerald.400, cyan.400",
+      "gradient": "green.400, cyan.400",
       "people": [
         "https://ghibliapi.vercel.app/people/2409052a-9029-4e8d-bfaf-70fd82c8e48d",
         "https://ghibliapi.vercel.app/people/7151abc6-1a9e-4e6a-9711-ddb50ea572ec",
@@ -360,7 +360,7 @@ export const movies =[
         "year": "2002",
         "running_time": "75",
         "score": "89",
-        "gradient": "yellow.200, amber.500",
+        "gradient": "yellow.200, yellow.700",
         "people": [
           "https://ghibliapi.vercel.app/people/"
         ],
@@ -422,7 +422,7 @@ export const movies =[
         "year": "2010",
         "running_time": "94",
         "score": "95",
-        "gradient": "amber.500, pink.500",
+        "gradient": "yellow.700, pink.500",
         "people": [
           "https://ghibliapi.vercel.app/people/"
         ],
@@ -453,7 +453,7 @@ export const movies =[
         "year": "2011",
         "running_time": "91",
         "score": "83",
-        "gradient": "amber.500, lime.700",
+        "gradient": "yellow.700, yellow.200",
         "people": [
           "https://ghibliapi.vercel.app/people/"
         ],
@@ -484,7 +484,7 @@ export const movies =[
       "year": "1991",
       "running_time": "118",
       "score": "100",
-      "gradient": "sky.200, sky.600",
+      "gradient": "cyan.200, cyan.600",
       "people": [
         "https://ghibliapi.vercel.app/people/"
       ],
