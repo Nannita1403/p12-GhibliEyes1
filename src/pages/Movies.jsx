@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import { movies } from "../providers/data";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
 
@@ -19,9 +19,8 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 3).map((movie) => {
         const isReversed = movie.id % 2 === 0;
         return (
-          //{`flex ${isReversed ? "flex-row-reverse" : "flex-row"}`}
-          <Flex key={movie.id} display={'flex'}
-          width={'full'} paddingX={'16px'} alignItems={'center'} marginTop={'80px'} >
+          <Flex key={movie.id} display={'flex'} flexDir={`flex(${isReversed ? "row-reverse" : "row"})`}
+          width={'full'} paddingX={'60px'} alignItems={'center'} marginTop={'80px'} >
             {/* Box Movie detail */}
             <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`}
             rounded={'12px'} boxShadow={'8px'} padding={'8px'} aspectRatio={1/1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
@@ -35,7 +34,8 @@ export default function Movies() {
 
             {/* Box Nombre Japones + Link */}
             <Box id="Japones name" width={'33%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-              <Box className="text-center text-black lg:text-3xl font-bold font-noto leading-tight writing-mode-vertical md:text-xl">
+              <Box alignContent={'center'} justifyItems={'center'} fontSize={{lg:'30px'}} fontWeight={'700'}
+              textStyle={{lg:'2xl'}} lineHeight={'1.25'}>
                 {movie.japaneseTitle.split("").map((char, idx) => (
                   <Text key={idx}>
                     {char}
@@ -44,20 +44,21 @@ export default function Movies() {
                 ))}
               </Box>
             </Box>
-            <div className="w-1/3 relative group">
-              <img
-                className="w-full h-full rounded-full shadow object-cover object-center transition-transform transform hover:scale-110"
+            
+            {/*relative group*/}
+            <Box id="Image-Gif" width={'33%'} position={'relative'}>
+              <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
               />
-              <img
+              <Image width={'full'} height={'full'} rounded={'full'} shadow={'sm'} objectFit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
                 className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
                 src={movie.gif}
                 alt={`${movie.title} Hover`}
                 loading="lazy"
               />
-            </div>
+            </Box>
           </Flex>
         );
       })}
