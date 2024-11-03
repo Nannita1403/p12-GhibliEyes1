@@ -46,8 +46,12 @@ export default function Movies() {
             </Box>
             
             {/*relative group*/}
+
             <Box id="Image-Gif" width={'33%'} position={'relative'}>
-              <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
+
+            <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} shadow={'sm'} objectPosition={'center'} src={movie.image} _hover= {{src:'{movie.gif}'}} transition="image" transitionTimingFunction="ease-in-out"
+            ></Image>
+              {/* <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
@@ -57,7 +61,7 @@ export default function Movies() {
                 src={movie.gif}
                 alt={`${movie.title} Hover`}
                 loading="lazy"
-              />
+              /> */}
             </Box>
           </Flex>
         );
@@ -80,14 +84,14 @@ export default function Movies() {
 
 
         {/* Carousel */}
-        {/* <Slider> */}
+        <Slider {...settings}>
           <div>{renderMovies(0)}</div>
           <div>{renderMovies(3)}</div>
-          <div>{renderMovies(6)}</div>
+          {/* <div>{renderMovies(6)}</div>
           <div>{renderMovies(9)}</div>
           <div>{renderMovies(12)}</div>
-          <div>{renderMovies(15)}</div>
-        {/* </Slider> */}
+          <div>{renderMovies(15)}</div> */}
+        </Slider>
       </Box>
     </Box>
   );
