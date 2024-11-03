@@ -1,4 +1,7 @@
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { movies } from "../providers/data";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { useContext } from "react";
@@ -7,27 +10,31 @@ import { ThemeContext } from "../providers/ThemePageProvider";
 export default function Movies() {
   const {light, setLight} = useContext(ThemeContext);
   const settings = {
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true
   };
+
 
   const renderMovies = (startIndex) => (
     <>
       {movies.slice(startIndex, startIndex + 3).map((movie) => {
         const isReversed = movie.id % 2 === 0;
         return (
-          <Flex key={movie.id} display={'flex'} flexDir={`flex(${isReversed ? "row-reverse" : "row"})`}
-          width={'full'} paddingX={'60px'} alignItems={'center'} marginTop={'80px'} >
+          <Flex id="Movie Box" key={movie.id} display={'flex'} flexDir={`flex(${isReversed ? "row-reverse" : "row"})`}
+          width={'full'} paddingX={'40px'} alignItems={'center'} marginTop={'15px'} >
             {/* Box Movie detail */}
             <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`}
             rounded={'12px'} boxShadow={'8px'} padding={'8px'} aspectRatio={1/1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
               <Flex direction={'column'} padding={'16px'}>
-                <Text fontFamily={`var(--font-family-title)`} fontWeight={'600'} fontSize={'3xl'} className="font-bold md:text-4xl">{movie.title}</Text>
+                <Text fontFamily={`var(--font-family-title)`} fontWeight={'600'} fontSize={'2xl'} className="font-bold md:text-4xl">{movie.title}</Text>
                 <Text fontSize={{lg:'md'}}>| {movie.year}</Text>
-                <Text textStyle={'italic'} fontSize={{lg:'md'}} marginTop={'16px'}>Director: {movie.director}</Text>
+                <Text textStyle={'italic'} fontSize={{lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
                 <Text textStyle={'italic'} fontSize={{lg:'md'}}>Producer: {movie.producer}</Text>
               </Flex>
             </Box>
@@ -47,16 +54,16 @@ export default function Movies() {
             
             {/*relative group*/}
 
-            <Box id="Image-Gif" width={'33%'} position={'relative'}>
-
-            <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} shadow={'sm'} objectPosition={'center'} src={movie.image} _hover= {{src:'{movie.gif}'}} transition="image" transitionTimingFunction="ease-in-out"
-            ></Image>
+            <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={'33%'} position={'relative'} marginX={'15px'}>
+           
+              <Image width={'75%'} height={'100%'} rounded={'full'} objectFit={'cover'} shadow={'sm'} objectPosition={'center'} src={movie.image} _hover={{src:'{${movie.gif}}'}} transition={'transform'} 
+             ></Image>
               {/* <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
-              />
-              <Image width={'full'} height={'full'} rounded={'full'} shadow={'sm'} objectFit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
+              /> */}
+              {/* <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} objectFit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
                 className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
                 src={movie.gif}
                 alt={`${movie.title} Hover`}
@@ -82,15 +89,14 @@ export default function Movies() {
         borderBottomWidth={'8px'} borderColor={`var(--color-teal-400)`}> Movies </Text>
         </Flex>
 
-
         {/* Carousel */}
         <Slider {...settings}>
           <div>{renderMovies(0)}</div>
           <div>{renderMovies(3)}</div>
-          {/* <div>{renderMovies(6)}</div>
+          <div>{renderMovies(6)}</div>
           <div>{renderMovies(9)}</div>
           <div>{renderMovies(12)}</div>
-          <div>{renderMovies(15)}</div> */}
+          <div>{renderMovies(15)}</div>
         </Slider>
       </Box>
     </Box>
