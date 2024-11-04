@@ -23,15 +23,13 @@ export default function Movies() {
 
   const renderMovies = (startIndex) => (
     <>
-      {movies.slice(startIndex, startIndex + 3).map((movie) => {
-        const isReversed = movie.id % 2 === 0;
+      {movies.slice(startIndex, startIndex + 3).map((movie, i) => {
+        const isReversed = i % 2 === 0;
         return (
           <Flex id="Movie Box" key={movie.id} display={'flex'} 
-          direction={`${isReversed ? "row-reverse" : "row"}`} width={'full%'} paddingX={'90px'} justifyContent={'center'} 
-          alignItems={'center'} marginTop={'15px'} >
+          direction={`${isReversed ? "row-reverse" : "row"}`} width={'full'} paddingX={{base:'10px', md:'50px', lg:'90px'}} justifyContent={'center'}  alignItems={'center'} marginTop={'15px'} >
             {/* Box Movie detail */}
-            <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`}
-            rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
+            <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`} margin={'15px'} rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
               <Flex direction={'column'} padding={'16px'}>
                 <Text fontFamily={`var(--font-family-title)`} fontWeight={'bold'} fontSize={{base:'md', md:'xl', lg:'2xl'}} className="font-bold md:text-4xl">{movie.title}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>| {movie.year}</Text>
@@ -56,14 +54,14 @@ export default function Movies() {
 
             <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={'33%'} position={'relative'} marginX={'15px'}>
            
-              <Image width={'100%'} height={'100%'} borderRadius={'full'} boxSize='250px' objectFit={'cover'} shadow={'sm'} src={movie.image} _hover={{src:`${movie.gif}`}} transition={'transform'}  loading="lazy"
-             ></Image>
+              {/* <Image width={'100%'} height={'100%'} borderRadius={'full'} boxSize='250px' objectFit={'cover'} shadow={'sm'} src={movie.image} _hover={{src:`${movie.gif}`}} transition={'transform'}  loading="lazy"
+             ></Image> */}
               {/* <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
               /> */}
-              <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
+              <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} position={'relative'} top={'0'} left={'0'} 
                 className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
                 src={movie.gif}
                 alt={`${movie.title} Hover`}

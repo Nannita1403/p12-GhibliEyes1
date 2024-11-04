@@ -9,10 +9,9 @@ const About = () => {
     <>
     <Flex  id="about" bg={`var(--${light ? "light" : "dark"}-mode-bg)`}
     paddingTop={'30px'}>
-      <Box max-width={'1280px'} paddingX={'20px'} paddingy={'0px'}>
-        <Flex paddingTop={'70px'} wrap='wrap'>
+      <Flex max-width={'1280px'} paddingX={'20px'} paddingy={'0px'} paddingTop={'70px'} wrap={{base:'wrap', md:'nowrap'}}>
         {/* Columna Izquiera */}
-         <Box id="ColIzq">
+         <Box id="ColIzq" width={{ base:'full', md:'1/2'}}>
             {/* Titulo*/}
       <Box id="titles" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}
       paddingX={'24px'} paddingY={'16px'} marginBottom={'24px'} borderLeftWidth={'8px'} borderColor={`var(--color-teal-400)`} >
@@ -69,11 +68,10 @@ const About = () => {
         <Box id="ColDer" width={{ base:'full', md:'1/2'}} paddingX={'16px'} marginBottom={{base:'40px', md:'0'}}  overflow={'hidden'}>
             <Image
               src={AboutHayao} alt="Image Hayao Gibli Studio"
-              objectFit={'cover'} width={{ base:'full', md:'50%'}} height={'full'} borderRadius={'12px'}
+              objectFit={'cover'} width={{base:'full'}} height={'full'} borderRadius={'12px'}
             />
           </Box>
-        </Flex>
-      </Box>
+      </Flex>
     </Flex>
     </>
   );
