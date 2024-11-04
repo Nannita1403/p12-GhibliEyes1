@@ -24,9 +24,9 @@ export const DesktopNav = () => {
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={600}
-                  color={`var(--${light ? "light" : "dark"}-mode-text)`}
+                  color={`var(--${light ? "light" : "dark"}-mode-nav)`}
                   _hover={{
-                    textDecoration: 'none',
+                    textDecoration: 'bold',
                     color:'#1D4044',
                   }}>
                   {navItem.label}

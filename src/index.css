@@ -4,6 +4,7 @@
 :root {
     --color-light: #f0f0f0;
     --color-dark: #23311a;
+    --color-black: #000000;
     --color-dark-font: #618548;
     --color-dark-bg: #78896d;
     --color-teal-100: #B2F5EA;
@@ -22,6 +23,9 @@
     --light-mode-bg-negative: var(--color-dark);
     --dark-mode-bg-negative: var(--color-light);
   
+    --light-mode-nav: var(--color-black);
+    --dark-mode-nav: var(--color-light);
+
     --light-mode-text: var(--color-dark-font);
     --dark-mode-text: var(--color-light);
     

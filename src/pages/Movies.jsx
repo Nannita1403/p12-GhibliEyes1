@@ -16,7 +16,7 @@ export default function Movies() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     pauseOnHover: true
   };
 
@@ -26,23 +26,23 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 3).map((movie) => {
         const isReversed = movie.id % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'} flexDir={`flex(${isReversed ? "row-reverse" : "row"})`}
-          width={'full'} paddingX={'40px'} alignItems={'center'} marginTop={'15px'} >
+          <Flex id="Movie Box" key={movie.id} display={'flex'} 
+          direction={`${isReversed ? "row-reverse" : "row"}`} width={'full%'} paddingX={'90px'} justifyContent={'center'} 
+          alignItems={'center'} marginTop={'15px'} >
             {/* Box Movie detail */}
             <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`}
-            rounded={'12px'} boxShadow={'8px'} padding={'8px'} aspectRatio={1/1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
+            rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
               <Flex direction={'column'} padding={'16px'}>
-                <Text fontFamily={`var(--font-family-title)`} fontWeight={'600'} fontSize={'2xl'} className="font-bold md:text-4xl">{movie.title}</Text>
-                <Text fontSize={{lg:'md'}}>| {movie.year}</Text>
-                <Text textStyle={'italic'} fontSize={{lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
-                <Text textStyle={'italic'} fontSize={{lg:'md'}}>Producer: {movie.producer}</Text>
+                <Text fontFamily={`var(--font-family-title)`} fontWeight={'bold'} fontSize={{base:'md', md:'xl', lg:'2xl'}} className="font-bold md:text-4xl">{movie.title}</Text>
+                <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>| {movie.year}</Text>
+                <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
+                <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Producer: {movie.producer}</Text>
               </Flex>
             </Box>
 
             {/* Box Nombre Japones + Link */}
-            <Box id="Japones name" width={'33%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-              <Box alignContent={'center'} justifyItems={'center'} fontSize={{lg:'30px'}} fontWeight={'700'}
-              textStyle={{lg:'2xl'}} lineHeight={'1.25'}>
+            <Box id="Japones name" width={{base:'20%', lg:'33%'}} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+              <Box alignContent={'center'} justifyItems={'center'} fontSize={{base:'md', md:'xl', lg:'2xl'}} fontWeight={'bold'} lineHeight={'1.1'}>
                 {movie.japaneseTitle.split("").map((char, idx) => (
                   <Text key={idx}>
                     {char}
@@ -56,19 +56,19 @@ export default function Movies() {
 
             <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={'33%'} position={'relative'} marginX={'15px'}>
            
-              <Image width={'75%'} height={'100%'} rounded={'full'} objectFit={'cover'} shadow={'sm'} objectPosition={'center'} src={movie.image} _hover={{src:'{${movie.gif}}'}} transition={'transform'} 
+              <Image width={'100%'} height={'100%'} borderRadius={'full'} boxSize='250px' objectFit={'cover'} shadow={'sm'} src={movie.image} _hover={{src:`${movie.gif}`}} transition={'transform'}  loading="lazy"
              ></Image>
               {/* <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
               /> */}
-              {/* <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} objectFit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
+              <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} position={'absolute'} top={'0'} left={'0'} transition={''} opacity={'0'} 
                 className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
                 src={movie.gif}
                 alt={`${movie.title} Hover`}
                 loading="lazy"
-              /> */}
+              />
             </Box>
           </Flex>
         );
