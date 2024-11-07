@@ -58,8 +58,10 @@ const Hero = () => {
               _hover={{  bg: 'green.500' }}>
               Explora ya! 
             </Button>
-            <Box display={'flex'} flexDir={'column'} alignItems={'center'} transform={'rotate(10deg)'} marginLeft={'32px'}>
-              <Text fontFamily={`var(--font-family-title)`} color={`var(--${light ? "light" : "dark"}-mode-text-about-neg)`}>
+            <Box display={'flex'} flexDir={'column'}  alignItems={'center'} transform={'rotate(10deg)'} marginLeft={'32px'}>
+              <Text fontWeight={600} fontFamily={`var(--font-family-title)`}
+              position={'relatice'} top={'-20px'}
+               color={`var(--${light ? "light" : "dark"}-mode-text-about-neg)`}>
                  Listo para
                   <br />
                  la Magia!

@@ -27,11 +27,11 @@ const NAV_ITEMS = [
             }} >
           Menu
         </MenuButton>
-        <MenuList bg={'none'}border={'none'}>
-          <MenuItem fontWeight={600} bg={'none'}as="a" href="/" textShadow="1px 1px black" >Home</MenuItem>
-          <MenuItem fontWeight={600} bg={'none'}as="a" href="/about" textShadow="1px 1px black">About</MenuItem>
-          <MenuItem fontWeight={600} bg={'none'}as="a" href="/movies"textShadow="1px 1px black">Movies</MenuItem>
-          <MenuItem fontWeight={600} bg={'none'}as="a" href="/favorites"textShadow="1px 1px black">Favorites</MenuItem>
+        <MenuList id="menuList" bg={'grey.100'} opacity={'10'} border={'none'} justifyContent={'flex-end'}> 
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/"  >Home</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/about" >About</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/movies">Movies</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/favorites">Favorites</MenuItem>
         </MenuList>
       </Menu>
       </>

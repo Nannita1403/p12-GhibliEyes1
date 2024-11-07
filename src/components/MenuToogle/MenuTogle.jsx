@@ -30,19 +30,14 @@ export default function MenuToogle() {
         zIndex={'200'}
         minH={'60px'}
         >
-        <Flex
-          flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}
-          display={{ base: 'flex', md: 'none' }}
-          alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
-          <MobileNav/>
-        </Flex>
+
         <Flex flex={{ base: '1' }} justify={{ base: 'center', md: 'space-around' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={'10'}>
             <DesktopNav/>
           </Flex>
           <Box>
            <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
-           w= "140px" position= "center" top="20px" left="90px"
+           w= "140px" position= "center" top="20px" left="90px" pr="10px"
            alt="Ghibli Studio Logo"/>
           </Box>
         </Flex>
@@ -53,7 +48,7 @@ export default function MenuToogle() {
           justify={'center'}
           direction={'row'}
           spacing={6}
-          marginRight={'60px'}>
+          marginRight={{md:'60px'}}>
           <Button as={'a'} fontSize={'sl'} fontWeight={600} variant={'link'} href={'#'}
                       color={`var(--${light ? "light" : "dark"}-mode-text)`}>
             Sign In
@@ -72,7 +67,15 @@ export default function MenuToogle() {
             Sign Up
           </Button>
         </Stack>
+        <Flex
+          flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}
+          display={{ base: 'flex', md: 'none' }}
+          paddingRight={'40px'}
+          alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
+          <MobileNav/>
+        </Flex>
         <ChangeTheme/>
+        
       </Flex>
 
 
