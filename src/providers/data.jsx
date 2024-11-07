@@ -409,7 +409,7 @@ export const movies =[
     {
         "id": "2de9426b-914a-4a06-a3a0-5e6d9d3886f6",
         "title": "Arrietty",
-        "japaneseTitle": "借りぐらしのアリエッティ",
+        "japaneseTitle": "借りぐらしのアリィ",
         "original_title_romanised": "Karigurashi no Arietti",
         "image":"https://i.pinimg.com/564x/73/a2/ec/73a2ec953533b8018851f729cc9bc5f3.jpg",
         "gif":"https://c.tenor.com/sods74ZNzXoAAAAC/tenor.gif",

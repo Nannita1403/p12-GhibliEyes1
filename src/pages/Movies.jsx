@@ -42,11 +42,12 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 3).map((movie, i) => {
         const isReversed = i % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'}
-          direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1024px'} paddingX={{base:'10px', md:'50px', lg:'90px'}} alignContent={'space-between'} justifyContent={'center'}  alignItems={'center'} marginTop={'15px'} >
+          <Flex id="Movie Box" key={movie.id} display={'flex'} h={'auto'}
+          direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1440px'} paddingX={{base:'10px', md:'50px', lg:'120px'}} alignContent={'space-between'} justifyContent={'space-evenly'}  alignItems={'center'} >
             {/* Box Movie detail */}
-            <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`} margin={'15px'} rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
-              <Flex direction={'column'} padding={'16px'}>
+            <Box id="Movie detail" bgGradient={`linear(to-l, ${movie.gradient})`} rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} 
+            justifyItems={'center'} alignItems={'center'} color={'white'}>
+              <Flex direction={'column'} padding={'9px'}>
                 <Text fontFamily={`var(--font-family-title)`} fontWeight={'bold'} fontSize={{base:'md', md:'xl', lg:'2xl'}} className="font-bold md:text-4xl">{movie.title}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>| {movie.year}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
@@ -55,7 +56,7 @@ export default function Movies() {
             </Box>
 
             {/* Box Nombre Japones + Link */}
-            <Box id="Japones name" width={{base:'20%', lg:'33%'}} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+            <Box id="Japones name" width={'33%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
               <Box alignContent={'center'} justifyItems={'center'} fontSize={{base:'md', md:'xl', lg:'2xl'}} fontWeight={'bold'} lineHeight={'1.1'}>
                 {movie.japaneseTitle.split("").map((char, idx) => (
                   <Text key={idx}>
@@ -70,18 +71,16 @@ export default function Movies() {
             <Flex
               justifyContent="center"  alignItems="center" h="300px"   w={{base:'40%', lg:'33%'}}  overflow="hidden">
               <Box
-                as="div"  position="relative" w={{base:'120px', xl:'200px'}} h={{base:'120px', xl:'200px'}} 
+                as="div"  position="relative" w={'200px'} h={'200px'} 
                 _before={{
                   content: "''", position: 'relative', display: 'block', width: '300%',  height: '300%',
                   boxSizing: 'border-box', marginLeft: '-100%',  marginTop: '-100%', borderRadius: '50%', bgColor:`var(--${light ? "light" : "dark"}-mode-text-about)`,
-                  animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
+                  animation:{xl:'2.25s ${pulseRing} cubic-bezier(0.355, 0.02, 0.415, 0.855) -0.4s infinite', lg:'none'},
                 }}>
                 <Avatar src={movie.gif} size="full" position="absolute" top={0} />
               </Box>
             </Flex>
             
-
-
 
             {/* <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={{base:'40%', lg:'33%'}} margin={'15px'}>  */}
            

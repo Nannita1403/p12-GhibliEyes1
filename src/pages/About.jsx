@@ -16,10 +16,10 @@ const About = () => {
       <Box id="titles" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}
       paddingX={'24px'} paddingY={'16px'} marginBottom={'24px'} borderLeftWidth={'8px'} borderColor={`var(--color-teal-400)`} >
       <Text textStyle="md">
-        ABOUT OUR STORY
+        SOBRE NUESTRA HISTORIA
       </Text>
       <Text marginTop={'8px'}fontFamily={`var(--font-family-title)`} fontSize={'40px'} fontWeight={'600'}>
-        Discovering Ghibli Magic
+        La magia de Ghibli 
       </Text>
       </Box>
          {/* Contenido de Texto */}

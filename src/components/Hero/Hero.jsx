@@ -61,7 +61,7 @@ const Hero = () => {
             <Box display={'flex'} flexDir={'column'}  alignItems={'center'} transform={'rotate(10deg)'} marginLeft={'32px'}>
               <Text fontWeight={600} fontFamily={`var(--font-family-title)`}
               position={'relatice'} top={'-20px'}
-               color={`var(--${light ? "light" : "dark"}-mode-text-about-neg)`}>
+               color={'white'}>
                  Listo para
                   <br />
                  la Magia!
