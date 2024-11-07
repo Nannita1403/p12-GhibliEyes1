@@ -21,10 +21,9 @@ const NAV_ITEMS = [
             fontSize={'sm'}
             fontWeight={600}
             shadow='inner'
-            color={`var(--${light ? "light" : "dark"}-mode-bg)`}
-            bg={`var(--${light ? "light" : "dark"}-mode-text)`} _hover={{
-              bg: '#23311a',
-              color:'white'
+            color={`var(--${light ? "light" : "dark"}-mode-text)`}
+            bg={`var(--${light ? "light" : "dark"}-mode-text-negative)`} _hover={{
+              color:'grey.800'
             }} >
           Menu
         </MenuButton>

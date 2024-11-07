@@ -3,9 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { movies } from "../providers/data";
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Text,  } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
+import { keyframes } from "@emotion/react";
 
 export default function Movies() {
   const {light, setLight} = useContext(ThemeContext);
@@ -16,9 +17,24 @@ export default function Movies() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3500,
     pauseOnHover: true
   };
+
+  const pulseRing = keyframes`
+	0% {
+    transform: scale(0.33);
+  }
+  40%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+	`
+
+
 
 
   const renderMovies = (startIndex) => (
@@ -26,8 +42,8 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 3).map((movie, i) => {
         const isReversed = i % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'} 
-          direction={`${isReversed ? "row-reverse" : "row"}`} width={'full'} paddingX={{base:'10px', md:'50px', lg:'90px'}} justifyContent={'center'}  alignItems={'center'} marginTop={'15px'} >
+          <Flex id="Movie Box" key={movie.id} display={'flex'}
+          direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1024px'} paddingX={{base:'10px', md:'50px', lg:'90px'}} alignContent={'space-between'} justifyContent={'center'}  alignItems={'center'} marginTop={'15px'} >
             {/* Box Movie detail */}
             <Box id="Movie detail" width={'33%'} bgGradient={`linear(to-l, ${movie.gradient})`} margin={'15px'} rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} justifyItems={'center'} alignItems={'center'} color={'white'}>
               <Flex direction={'column'} padding={'16px'}>
@@ -50,24 +66,39 @@ export default function Movies() {
               </Box>
             </Box>
             
-            {/*relative group*/}
+            {/* Box Image-Gif */}
+            <Flex
+              justifyContent="center"  alignItems="center" h="300px"   w={{base:'40%', lg:'33%'}}  overflow="hidden">
+              <Box
+                as="div"  position="relative" w={{base:'120px', xl:'200px'}} h={{base:'120px', xl:'200px'}} 
+                _before={{
+                  content: "''", position: 'relative', display: 'block', width: '300%',  height: '300%',
+                  boxSizing: 'border-box', marginLeft: '-100%',  marginTop: '-100%', borderRadius: '50%', bgColor:`var(--${light ? "light" : "dark"}-mode-text-about)`,
+                  animation: `2.25s ${pulseRing} cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite`,
+                }}>
+                <Avatar src={movie.gif} size="full" position="absolute" top={0} />
+              </Box>
+            </Flex>
+            
 
-            <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={'33%'} position={'relative'} marginX={'15px'}>
+
+
+            {/* <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={{base:'40%', lg:'33%'}} margin={'15px'}>  */}
            
               {/* <Image width={'100%'} height={'100%'} borderRadius={'full'} boxSize='250px' objectFit={'cover'} shadow={'sm'} src={movie.image} _hover={{src:`${movie.gif}`}} transition={'transform'}  loading="lazy"
              ></Image> */}
-              {/* <Image width={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
+              {/* <Image width={'full'} borderRadius={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
                 src={movie.image}
                 alt={movie.title}
                 loading="lazy"
               /> */}
-              <Image width={'75%'} height={'full'} rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} position={'relative'} top={'0'} left={'0'} 
+              {/* <Image rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} objectFit={'cover'} top={'0'} left={'0'} 
                 className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
                 src={movie.gif}
                 alt={`${movie.title} Hover`}
                 loading="lazy"
-              />
-            </Box>
+              /> */}
+            {/* </Box> */}
           </Flex>
         );
       })}

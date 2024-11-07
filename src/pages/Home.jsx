@@ -5,10 +5,8 @@ import { Box, Flex } from '@chakra-ui/react'
 const Home = () => {
   return (
     <>
-     <Flex objectFit={'cover'}>
-        <Box>
+     <Flex objectFit={'relative'} w={'100%'} h={'100svh'} overflowX={'hidden'}>
         <Hero/>
-        </Box>
       </Flex>
 
     </>

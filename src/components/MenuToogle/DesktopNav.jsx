@@ -24,10 +24,10 @@ export const DesktopNav = () => {
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={600}
-                  color={`var(--${light ? "light" : "dark"}-mode-nav)`}
+                  color={`var(--${light ? "light" : "dark"}-mode-text)`}
                   _hover={{
                     textDecoration: 'bold',
-                    color:'#1D4044',
+                    color:'grey.800',
                   }}>
                   {navItem.label}
                 </Box>

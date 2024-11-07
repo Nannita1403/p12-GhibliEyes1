@@ -17,10 +17,10 @@ function App() {
   const {light}=useContext(ThemeContext);
 
   return (
-    <Box height={'100vh'} width="100%"
+    <Box height={'100%'} width={'100%'} overflowX={'hidden'}
     bg={`var(--${light ? "light" : "dark"}-mode-bg)`} 
     color={`var(--${light ? "light" : "dark"}-mode-text)`}
-    transition="all 0.5s">
+    transition="all 0.5s" >
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
