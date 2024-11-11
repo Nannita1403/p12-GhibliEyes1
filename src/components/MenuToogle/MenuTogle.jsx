@@ -18,15 +18,12 @@ const NAV_ITEMS = [
   { label: 'Favorites', href: '/favorites'},
 ]
 export default function MenuToogle() {
-  const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
   const {light, setLight} = useContext(ThemeContext);
 
   return (
     <Box>
       <Flex
-        position={'absolute'}
-        insetX={'5'}
-        top={'10px'}
+        position={'absolute'} insetX={'5'}top={'10px'}
         zIndex={'200'}
         minH={'60px'}
         >

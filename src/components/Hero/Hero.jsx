@@ -19,7 +19,7 @@ const Hero = () => {
   const {light, setLight} = useContext(ThemeContext);
   return (
     <>
-      <Flex display={'flex'} zIndex={'1'} >       
+      <Flex display={'flex'} zIndex={'0'} >       
         <Image
               src={CasaGif} alt="Image Fondo" position={'absolute'} top={'0'} left={'0'} 
               w={'full'} h={'full'} objectFit={'cover'}
@@ -27,7 +27,7 @@ const Hero = () => {
         <Box pos={'absolute'} inset={'0'} bgGradient={`linear(to-r, gray.800, transparent)`} opacity={'80'}></Box>
 
         <Container pos={'relative'} mx={'auto'} maxW={'xl'} px={{ base:'16px', sm:'20px', lg:'28px'}} 
-        py={'32px'} zIndex={'1'}>
+        py={'32px'} zIndex={'auto'}>
         <Stack
           as={Box} textAlign={'left'}
           py={{ base: 30, md: 46 }}>

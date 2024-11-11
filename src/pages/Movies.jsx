@@ -3,10 +3,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { movies } from "../providers/data";
-import { Avatar, Box, Flex, Text,  } from "@chakra-ui/react";
+import { AspectRatio, Avatar, Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
 import { keyframes } from "@emotion/react";
+import BackdropJapanName from "../components/FilmModal/FIlmModal";
+import Movie from "./Movie";
 
 export default function Movies() {
   const {light, setLight} = useContext(ThemeContext);
@@ -34,30 +36,40 @@ export default function Movies() {
   }
 	`
 
-
-
-
   const renderMovies = (startIndex) => (
     <>
       {movies.slice(startIndex, startIndex + 3).map((movie, i) => {
         const isReversed = i % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'} h={'auto'}
-          direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1440px'} paddingX={{base:'10px', md:'50px', lg:'120px'}} alignContent={'space-between'} justifyContent={'space-evenly'}  alignItems={'center'} >
+          <Flex id="Movie Box" key={movie.id} display={'flex'} maxH={'250px'}
+          direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1000px'} paddingX={{base:'10px', md:'50px', lg:'120px'}} 
+          alignContent={'space-between'} justifyContent={'space-evenly'}  alignItems={'center'} >
             {/* Box Movie detail */}
-            <Box id="Movie detail" bgGradient={`linear(to-l, ${movie.gradient})`} rounded={'12px'} shadow={'xl'} padding={'8px'} aspectRatio={1} display={'flex'} 
-            justifyItems={'center'} alignItems={'center'} color={'white'}>
+            <Box id="Movie detail" w={{base:'40%', lg:'33%'}} bgGradient={`linear(to-l, ${movie.gradient})`} rounded={'12px'} shadow={'xl'} aspectRatio={1} display={'flex'} 
+            justifyItems={'stretch'} alignItems={'center'} color={'white'} maxW={{base:'120px', md:'250px'}} justifyContent={'space-around'}>
               <Flex direction={'column'} padding={'9px'}>
-                <Text fontFamily={`var(--font-family-title)`} fontWeight={'bold'} fontSize={{base:'md', md:'xl', lg:'2xl'}} className="font-bold md:text-4xl">{movie.title}</Text>
+                <Text fontFamily={`var(--font-family-title)`} fontWeight={'bold'} fontSize={{base:'md', md:'xl', lg:'2xl'}}>{movie.title}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>| {movie.year}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Producer: {movie.producer}</Text>
+                <BackdropJapanName title={movie.title}>
+                <AspectRatio maxW='560px' ratio={1}>
+                  <video
+                    title={movie.title}
+                    src={movie.trailer}
+                    allowFullScreen
+                  />
+                </AspectRatio>
+                </BackdropJapanName>
               </Flex>
             </Box>
 
             {/* Box Nombre Japones + Link */}
             <Box id="Japones name" width={'33%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-              <Box alignContent={'center'} justifyItems={'center'} fontSize={{base:'md', md:'xl', lg:'2xl'}} fontWeight={'bold'} lineHeight={'1.1'}>
+
+              <Box display={'flex'} flexDir={'column'} alignContent={'center'} justifyItems={'center'}
+               fontSize={{base:'md', md:'xl', lg:'2xl'}} fontWeight={'bold'} lineHeight={'1.1'}
+              >
                 {movie.japaneseTitle.split("").map((char, idx) => (
                   <Text key={idx}>
                     {char}
@@ -71,44 +83,26 @@ export default function Movies() {
             <Flex
               justifyContent="center"  alignItems="center" h="300px"   w={{base:'40%', lg:'33%'}}  overflow="hidden">
               <Box
-                as="div"  position="relative" w={'200px'} h={'200px'} 
+                as="div"  position="relative" w={'180px'} h={'180px'} 
                 _before={{
                   content: "''", position: 'relative', display: 'block', width: '300%',  height: '300%',
                   boxSizing: 'border-box', marginLeft: '-100%',  marginTop: '-100%', borderRadius: '50%', bgColor:`var(--${light ? "light" : "dark"}-mode-text-about)`,
-                  animation:{xl:'2.25s ${pulseRing} cubic-bezier(0.355, 0.02, 0.415, 0.855) -0.4s infinite', lg:'none'},
+                  animation:`2.25s ${pulseRing} cubic-bezier(0.355, 0.02, 0.415, 0.855) -0.3s infinite`,
                 }}>
                 <Avatar src={movie.gif} size="full" position="absolute" top={0} />
               </Box>
             </Flex>
-            
-
-            {/* <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} id="Image-Gif" width={{base:'40%', lg:'33%'}} margin={'15px'}>  */}
-           
-              {/* <Image width={'100%'} height={'100%'} borderRadius={'full'} boxSize='250px' objectFit={'cover'} shadow={'sm'} src={movie.image} _hover={{src:`${movie.gif}`}} transition={'transform'}  loading="lazy"
-             ></Image> */}
-              {/* <Image width={'full'} borderRadius={'full'} height={'full'}  rounded={'full'} objectFit={'cover'} objectPosition={'center'} transition={'transform'} transform={{hover:"scale-110"}}
-                src={movie.image}
-                alt={movie.title}
-                loading="lazy"
-              /> */}
-              {/* <Image rounded={'full'} shadow={'sm'} fit={'cover'} objectPosition={'center'} objectFit={'cover'} top={'0'} left={'0'} 
-                className="hidden w-full h-full rounded-full shadow object-cover object-center absolute top-0 left-0 transition-opacity opacity-0 group-hover:opacity-100"
-                src={movie.gif}
-                alt={`${movie.title} Hover`}
-                loading="lazy"
-              /> */}
-            {/* </Box> */}
           </Flex>
         );
       })}
     </>
   );
 
-  // {xl:'40px', lg:'24px'} justify={{ base: 'center', md: 'space-around' }}>
+
   return (
     <Box id="movies" color={`var(--${light ? "light" : "dark"}-mode-text-about)`} 
-    paddingY={{base:'70px'}}>
-      <Box marginX={'auto'} paddingY={'40px'} paddingX={{md:'24px'}}>
+    paddingY={{base:'70px'}} h={'100svh'}>
+      <Box marginX={'auto'} paddingY={'40px'} paddingX={{md:'24px', xl:'300px'}}>
         {/* Section Title */}
         <Flex id="sectionTitle" alignContent={'center'} flexDirection={'column'} 
         alignItems={'center'} marginBottom={'24px'} >

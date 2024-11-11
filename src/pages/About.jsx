@@ -65,7 +65,7 @@ const About = () => {
         </Box>     
          </Box>
         {/* Columna Derecha Imagen */}
-        <Box id="ColDer" width={{ base:'full', md:'1/2'}} paddingX={'16px'} marginBottom={{base:'40px', md:'0'}}  overflow={'hidden'}>
+        <Box id="ColDer" width={{ base:'full', md:'1/2'}} paddingX={'16px'} marginBottom={'5'}  overflow={'hidden'}>
             <Image
               src={AboutHayao} alt="Image Hayao Gibli Studio"
               objectFit={'cover'} width={{base:'full'}} height={'full'} borderRadius={'12px'}
