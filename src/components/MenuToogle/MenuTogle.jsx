@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import ChangeTheme from '../ChangeTheme/ChangeTheme';
 import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
+import Login from '../Login/Login';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/'},
@@ -46,10 +47,11 @@ export default function MenuToogle() {
           direction={'row'}
           spacing={6}
           marginRight={{md:'60px'}}>
-          <Button as={'a'} fontSize={'sl'} fontWeight={600} variant={'link'} href={'#'}
+            <Login/>
+          {/* <Button as={'a'} fontSize={'sl'} fontWeight={600} variant={'link'} href={'#'}
                       color={`var(--${light ? "light" : "dark"}-mode-text)`}>
             Sign In
-          </Button>
+          </Button> */}
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
