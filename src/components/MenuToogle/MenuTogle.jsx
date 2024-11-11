@@ -3,8 +3,6 @@
 import {
   Box, Flex, Text, IconButton, Button, Stack, Collapse, Image,
   useDisclosure} from '@chakra-ui/react'
-import {
-  HamburgerIcon, CloseIcon,ChevronDownIcon, ChevronRightIcon,} from '@chakra-ui/icons'
 import { ThemeContext } from '../../providers/ThemePageProvider';
 import { useContext } from 'react';
 import ChangeTheme from '../ChangeTheme/ChangeTheme';
@@ -41,30 +39,14 @@ export default function MenuToogle() {
         </Flex>
 
         <Stack
-          flex={{ base: 1, md: 0 }}
-          alignItems={'center'}
-          justify={'center'}
-          direction={'row'}
-          spacing={6}
-          marginRight={{md:'60px'}}>
+          flex={{ base: 1, md: 0 }} alignItems={'center'}  justify={'center'}  direction={'row'}
+          spacing={6} marginRight={{md:'60px'}}>
             <Login/>
-          {/* <Button as={'a'} fontSize={'sl'} fontWeight={600} variant={'link'} href={'#'}
-                      color={`var(--${light ? "light" : "dark"}-mode-text)`}>
-            Sign In
-          </Button> */}
-          <Button
-            as={'a'}
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={`var(--${light ? "light" : "dark"}-mode-bg)`}
-            bg={`var(--${light ? "light" : "dark"}-mode-text)`}
-            href={'#'}
-            _hover={{
-              bg: '#23311a',
-            }}>
-            Sign Up
-          </Button>
+            <Button as={'a'} display={{ base: 'none', md: 'inline-flex' }} fontSize={'sm'}  fontWeight={600}
+              color={`var(--${light ? "light" : "dark"}-mode-bg)`}  bg={`var(--${light ? "light" : "dark"}-mode-text)`}
+              href={'/'} _hover={{  bg: '#23311a', }}>
+              Sign Up
+            </Button>
         </Stack>
         <Flex
           flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}

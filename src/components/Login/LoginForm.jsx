@@ -14,15 +14,11 @@ const LoginForm = ({ handleOpenLoginForm }) => {
     <>
       <>
         <FormControl onSubmit={handleSubmit(onSubmit)} style={{ padding: '0.5vw' }}>
-          <FormLabel isRequired>
-            Username:
-            </FormLabel>
+          <FormLabel isRequired> Username:</FormLabel>
            <Input type='Username'/>
         </FormControl>
         <FormControl onSubmit={handleSubmit(onSubmit)} style={{ padding: '0.5vw' }}>
-          <FormLabel isRequired>
-            Password:
-            </FormLabel>
+          <FormLabel isRequired> Password: </FormLabel>
            <Input type='password'/>
         </FormControl>
         <Button type='submit'>Go!</Button>
