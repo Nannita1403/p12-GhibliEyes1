@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { movies } from "../providers/data";
-import { AspectRatio, Avatar, Box, Button, Flex, Text } from "@chakra-ui/react";
+import { AspectRatio, Avatar, Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
 import { keyframes } from "@emotion/react";
@@ -52,9 +52,18 @@ export default function Movies() {
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>| {movie.year}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Producer: {movie.producer}</Text>
-                <BackdropJapanName title={movie.title}>
-
-                </BackdropJapanName>
+                    <BackdropJapanName title={movie.title} trailer={movie.trailer} >
+                    
+                    <Text fontSize={{base:'xs', md:'sm', lg:'md'}} fontWeight={'bold'}>| Año: {movie.year} | {movie.running_time} min | Score: {movie.score}</Text>
+                    <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director} </Text>
+                    <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Producer: {movie.producer}</Text>
+                      <br/>
+                    <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Descripcion: {movie.description}</Text>
+                      <br/>
+                      <AspectRatio maxW='400px' ratio={4 / 3}>
+                        <Image src={movie.movie_banner} alt='banner' objectFit='cover' />
+                      </AspectRatio>
+                    </BackdropJapanName>
               </Flex>
             </Box>
 
