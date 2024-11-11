@@ -6,7 +6,6 @@ const NAV_ITEMS = [
     { label: 'Home', href: '/'},
     { label: 'About', href: '/about'},
     { label: 'Movies', href: '/movies'},
-    { label: 'Favorites', href: '/favorites'}
 ]
 
 export const DesktopNav = () => {

@@ -8,8 +8,7 @@ import About from './pages/About';
 import Movies from './pages/Movies';
 import Error from './components/AlertError/Error';
 import { Route, Routes } from 'react-router-dom';
-// import Footer from './components/Footer/Footer';
-import Favorites from './pages/Favorites';
+
 import Header from './components/Header/Header';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>} />
         <Route path="/movies" element={<Movies/>} />
-        <Route path="/favorites" element={<Favorites/>} />
         <Route path="*" element={<Error/>} />
       </Routes>
       {/* <Footer/> */}

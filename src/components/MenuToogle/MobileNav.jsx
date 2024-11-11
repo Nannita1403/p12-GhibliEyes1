@@ -8,7 +8,6 @@ const NAV_ITEMS = [
     { label: 'Home', href: '/'},
     { label: 'About', href: '/about'},
     { label: 'Movies', href: '/movies'},
-    { label: 'Favorites', href: '/favorites'},
   ]
 
   export const MobileNav = () => {
@@ -27,7 +26,6 @@ const NAV_ITEMS = [
           <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/"  >Home</MenuItem>
           <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/about" >About</MenuItem>
           <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/movies">Movies</MenuItem>
-          <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/favorites">Favorites</MenuItem>
         </MenuList>
       </Menu>
       </>
