@@ -15,7 +15,7 @@ const LoginForm = ({ handleOpenLoginForm }) => {
       <>
         <FormControl onSubmit={handleSubmit(onSubmit)} style={{ padding: '0.5vw' }}>
           <FormLabel isRequired> Username:</FormLabel>
-           <Input type='Username'/>
+           <Input type='Username1'/>
         </FormControl>
         <FormControl onSubmit={handleSubmit(onSubmit)} style={{ padding: '0.5vw' }}>
           <FormLabel isRequired> Password: </FormLabel>
