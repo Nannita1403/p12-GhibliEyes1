@@ -1,4 +1,4 @@
-import { Box, Button, Container, createIcon, Flex, Heading, Icon, Image, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Container, createIcon, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import CasaGif from "../../assets/hero/casa.gif"
 import { ThemeContext } from "../../providers/ThemePageProvider";
 import { useContext } from "react";
@@ -22,15 +22,14 @@ const Hero = () => {
       <Flex display={'flex'} zIndex={'0'} >       
         <Image
               src={CasaGif} alt="Image Fondo" position={'absolute'} top={'0'} left={'0'} 
-              w={'full'} h={'full'} objectFit={'cover'}
-            />
-        <Box pos={'absolute'} inset={'0'} bgGradient={`linear(to-r, gray.800, transparent)`} opacity={'80'}></Box>
+              w={'full'} h={'full'} objectFit={'cover'}/>
+        <Box pos={'absolute'} inset={'0'} bgGradient={`linear(to-r, gray.800, transparent)`} 
+        opacity={'80'}></Box>
 
         <Container pos={'relative'} mx={'auto'} maxW={'xl'} px={{ base:'16px', sm:'20px', lg:'28px'}} 
         py={'32px'} zIndex={'auto'}>
-        <Stack
-          as={Box} textAlign={'left'}
-          py={{ base: 30, md: 46 }}>
+
+        <Stack as={Box} textAlign={'left'}   py={{ base: 30, md: 46 }}>
           <Heading fontWeight={600}  fontSize={{ base: '7xl', sm: '8xl', md: '9xl' }} 
           fontFamily={`var(--font-family-title)`} lineHeight={'110%'} pt={'30px'}
           color={`var(--${light ? "light" : "dark"}-mode-text-negative)`}>
@@ -59,9 +58,7 @@ const Hero = () => {
               Explora ya! 
             </Button>
             <Box display={'flex'} flexDir={'column'}  alignItems={'center'} transform={'rotate(10deg)'} marginLeft={'32px'}>
-              <Text fontWeight={600} fontFamily={`var(--font-family-title)`}
-              position={'relatice'} top={'-20px'}
-               color={'white'}>
+              <Text fontWeight={600} fontFamily={`var(--font-family-title)`} position={'relatice'} top={'-20px'}  color={'white'}>
                  Listo para
                   <br />
                  la Magia!
@@ -72,24 +69,6 @@ const Hero = () => {
             </Text>
               </Box>
             </Box>
-            {/* <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={91}
-                position={'absolute'}
-                right={-71}
-                top={'10px'}
-              />
-              <Text
-                fontSize={'lg'} fontFamily={`var(--font-family-title)`}
-                position={'absolute'} right={'-125px'}  top={'-15px'}
-                transform={'rotate(10deg)'}
-                color={`var(--${light ? "light" : "dark"}-mode-text-about-neg)`}>
-            Get Ready<br/>
-            for Magic
-              </Text>
-            </Box> */}
           </Stack>
         </Stack>
       </Container>

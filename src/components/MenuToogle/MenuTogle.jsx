@@ -1,8 +1,6 @@
-'use client'
 
 import {
-  Box, Flex, Text, IconButton, Button, Stack, Collapse, Image,
-  useDisclosure} from '@chakra-ui/react'
+  Box, Flex, Image,} from '@chakra-ui/react'
 import { ThemeContext } from '../../providers/ThemePageProvider';
 import { useContext } from 'react';
 import ChangeTheme from '../ChangeTheme/ChangeTheme';
@@ -22,27 +20,20 @@ export default function MenuToogle() {
   return (
     <Box>
       <Flex
-        position={'absolute'} insetX={'5'}top={'10px'}
-        zIndex={'200'}
-        minH={'60px'}
-        >
-
+        position={'absolute'} insetX={'5'}top={'10px'} zIndex={'200'} minH={'60px'} >
         <Flex flex={{ base: '1' }} justify={{ base: 'center', md: 'space-around' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={'10'}>
             <DesktopNav/>
           </Flex>
           <Box>
            <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
-           w= "140px" position= "center" top="20px" left="90px" mr="150px" 
-           alt="Ghibli Studio Logo"/>
+           w= "140px" position= "center" top="20px" left="90px" mr="150px"  alt="Ghibli Studio Logo"/>
           </Box>
         </Flex>
 
         <Flex
-          flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}
-          display={{ base: 'flex', md: 'none' }}
-          paddingRight={'40px'}
-          alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
+          flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}  display={{ base: 'flex', md: 'none' }}
+          paddingRight={'40px'} alignItems={'center'} justifyContent={'center'} alignContent={'center'}>
           <MobileNav/>
         </Flex>
         <ChangeTheme/>

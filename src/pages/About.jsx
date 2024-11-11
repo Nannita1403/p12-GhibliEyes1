@@ -68,8 +68,7 @@ const About = () => {
         <Box id="ColDer" width={{ base:'full', md:'1/2'}} paddingX={'16px'} marginBottom={'5'}  overflow={'hidden'}>
             <Image
               src={AboutHayao} alt="Image Hayao Gibli Studio"
-              objectFit={'cover'} width={{base:'full'}} height={'full'} borderRadius={'12px'}
-            />
+              objectFit={'cover'} width={{base:'full'}} height={'full'} borderRadius={'12px'} />
           </Box>
       </Flex>
     </Flex>

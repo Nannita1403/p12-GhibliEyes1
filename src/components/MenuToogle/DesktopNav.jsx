@@ -17,13 +17,8 @@ export const DesktopNav = () => {
           <Box key={navItem.label} alignItems={'center'}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
-                <Box
-                  as="a"
-                  p={2}
-                  href={navItem.href ?? '#'}
-                  fontSize={'sm'}
-                  fontWeight={600}
-                  color={`var(--${light ? "light" : "dark"}-mode-text)`}
+                <Box  as="a" p={2}  href={navItem.href ?? '#'}  fontSize={'sm'}
+                  fontWeight={600}  color={`var(--${light ? "light" : "dark"}-mode-text)`}
                   _hover={{
                     textDecoration: 'bold',
                     color:'grey.800',

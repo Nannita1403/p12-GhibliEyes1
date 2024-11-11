@@ -1,5 +1,5 @@
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, 
- ModalBody, ModalCloseButton, useDisclosure, Text, Button, 
+ ModalBody, ModalCloseButton, useDisclosure, Button, 
  RadioGroup, Stack} from '@chakra-ui/react'
 import { useContext, useState } from 'react'
 import { ThemeContext } from '../../providers/ThemePageProvider';
