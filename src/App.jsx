@@ -26,7 +26,6 @@ function App() {
         <Route path="/movies" element={<Movies/>} />
         <Route path="*" element={<Error/>} />
       </Routes>
-      {/* <Footer/> */}
   </Box>
   )
 }
