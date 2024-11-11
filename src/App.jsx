@@ -9,7 +9,7 @@ import Movies from './pages/Movies';
 import Movie from './pages/Movie';
 import Error from './components/AlertError/Error';
 import { Route, Routes } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import Favorites from './pages/Favorites';
 import Header from './components/Header/Header';
 
@@ -30,7 +30,7 @@ function App() {
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="*" element={<Error/>} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
   </Box>
   )
 }
