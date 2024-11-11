@@ -1,6 +1,6 @@
 
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import {Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Menu, MenuButton, MenuItem, MenuList, useDisclosure} from "@chakra-ui/react"
+
+import {Button, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
 import { ThemeContext } from "../../providers/ThemePageProvider";
 import { useContext } from "react";
 
@@ -23,11 +23,11 @@ const NAV_ITEMS = [
           Menu
         </MenuButton>
         
-        <MenuList id="menuList" bg={'grey.400'} backdropBlur='8px' border={'none'} justifyContent={'flex-end'}> 
-          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/"  >Home</MenuItem>
-          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/about" >About</MenuItem>
-          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/movies">Movies</MenuItem>
-          <MenuItem justifyContent={'flex-end'} fontWeight={600} bg={'none'}as="a" href="/favorites">Favorites</MenuItem>
+        <MenuList id="menuList" bgColor={'white'} opacity={'0.4'} justifyContent={'flex-end'} color={`var(--color-dark-font)`}> 
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/"  >Home</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/about" >About</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/movies">Movies</MenuItem>
+          <MenuItem justifyContent={'flex-end'} fontWeight={600} as="a" href="/favorites">Favorites</MenuItem>
         </MenuList>
       </Menu>
       </>

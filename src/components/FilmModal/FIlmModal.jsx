@@ -47,7 +47,7 @@ const BackdropJapanName= ({title, children, trailer})=> {
             </ModalBody>
             <ModalFooter>
             <Button
-              as={'a'} href={trailer} px={6} marginRight={'10px'}
+              as={'a'} href={trailer} px={6} marginRight={'10px'} target="_blank"
               color={`var(--${light ? "light" : "dark"}-mode-bg)`}
               bg={`var(--${light ? "light" : "dark"}-mode-text)`}
               _hover={{  bg: 'green.500' }}>

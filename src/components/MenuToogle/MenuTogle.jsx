@@ -27,27 +27,31 @@ export default function MenuToogle() {
         minH={'60px'}
         >
 
-        <Flex flex={{ base: '1' }} justify={{ base: 'center', md: 'space-around' }}>
+        <Flex flex={{ base: '1' }} justify={{ base: 'center', md: 'space-between' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={'10'}>
             <DesktopNav/>
           </Flex>
           <Box>
            <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
-           w= "140px" position= "center" top="20px" left="90px" pr="10px"
+           w= "140px" position= "center" top="20px" left="90px" mr="150px" 
            alt="Ghibli Studio Logo"/>
           </Box>
         </Flex>
 
-        <Stack
+        {/* <Stack
           flex={{ base: 1, md: 0 }} alignItems={'center'}  justify={'center'}  direction={'row'}
           spacing={6} marginRight={{md:'60px'}}>
             <Login/>
+             <Button as={'a'} fontSize={'sl'} fontWeight={600} href={'#'}
+               color={`var(--${light ? "light" : "dark"}-mode-text)`}>
+              Sign In
+            </Button>
             <Button as={'a'} display={{ base: 'none', md: 'inline-flex' }} fontSize={'sm'}  fontWeight={600}
               color={`var(--${light ? "light" : "dark"}-mode-bg)`}  bg={`var(--${light ? "light" : "dark"}-mode-text)`}
               href={'/'} _hover={{  bg: '#23311a', }}>
               Sign Up
-            </Button>
-        </Stack>
+            </Button> 
+        </Stack> */}
         <Flex
           flex={{ base: '1', md: 'auto' }} ml={{ base: '-1' }}
           display={{ base: 'flex', md: 'none' }}
@@ -56,19 +60,8 @@ export default function MenuToogle() {
           <MobileNav/>
         </Flex>
         <ChangeTheme/>
-        
       </Flex>
-
-
-
     </Box>
   )
 }
-
-// interface NavItem {
-//   label: string
-//   subLabel?: string
-//   children?: Array<NavItem>
-//   href?: string
-// }
 

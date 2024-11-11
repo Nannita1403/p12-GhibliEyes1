@@ -1,38 +1,89 @@
-import React, { useState } from 'react'
+import { Link } from "react-router-dom";
+import { useRef, useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-import LoginButton from './LoginButton'
-import WelcomeText from './WelcomeText'
-import LoginForm from './LoginForm'
+export default function Login() {
+  const { username, password, logged, login } = useContext(AuthContext);
 
-const Login = ({}) => {
-  const [isLogging, setIsLogging] = useState(false)
-  const [showWelcomeText, setWelcomeText] = useState(false)
-  const [username, setUsername] = useState('')
+  const userRef = useRef();
+  const errRef = useRef();
 
-  const handleOpenLoginForm = (formUsername) => {
-    setUsername(formUsername)
-    setIsLogging(!isLogging)
-    setWelcomeText(true)
-  }
+  const [user, setUser] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [errMsg, setErrMsg] = useState("");
 
-  const handleLogOut = () => {
-    console.log('logging out')
-    setUsername(null)
-    setIsLogging(false)
-    setWelcomeText(false)
+  useEffect(() => {
+    setErrMsg("");
+  }, [user, pwd]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (user === username && pwd === password) {
+      login(true);
+      setUser("");
+      setPwd("");
+    } else {
+      setErrMsg("Login Failed");
+    }
+  };
+
+  function logout() {
+    login(false);
   }
 
   return (
-    <>
-      {isLogging ? (
-        <LoginForm handleOpenLoginForm={handleOpenLoginForm} />
-      ) : showWelcomeText ? (
-        <WelcomeText username={username} handleLogOut={handleLogOut} />
+    <div className="login">
+      {logged ? (
+        <section className="logged">
+          <h1>You are logged in!</h1>
+          <p>
+            <Link className="button" to="/favorites">
+              Start adding movies!
+            </Link>
+          </p>
+          <a href="/" onClick={() => logout()}>
+            Logout
+          </a>
+        </section>
       ) : (
-        <LoginButton handleOpenLoginForm={handleOpenLoginForm} />
-      )}
-    </>
-  )
-}
+        <section>
+          <p
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              ref={userRef}
+              autoComplete="off"
+              onChange={(e) => setUser(e.target.value)}
+              value={user}
+              required
+            />
 
-export default Login
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              onChange={(e) => setPwd(e.target.value)}
+              value={pwd}
+              required
+            />
+            <button className="button">Sign In</button>
+          </form>
+          <p>
+            Need an Account?
+            <span className="line">
+              <Link to="/register">Sign Up</Link>
+            </span>
+          </p>
+        </section>
+      )}
+    </div>
+  );
+}

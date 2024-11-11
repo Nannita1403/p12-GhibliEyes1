@@ -6,7 +6,6 @@ import { Box } from '@chakra-ui/react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Movies from './pages/Movies';
-import Movie from './pages/Movie';
 import Error from './components/AlertError/Error';
 import { Route, Routes } from 'react-router-dom';
 // import Footer from './components/Footer/Footer';
@@ -26,7 +25,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>} />
         <Route path="/movies" element={<Movies/>} />
-        <Route path="/movie/:id" element={<Movie/>} />
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="*" element={<Error/>} />
       </Routes>

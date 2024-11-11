@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
 import { keyframes } from "@emotion/react";
 import BackdropJapanName from "../components/FilmModal/FIlmModal";
-import Movie from "./Movie";
 
 export default function Movies() {
   const {light, setLight} = useContext(ThemeContext);
@@ -61,7 +60,7 @@ export default function Movies() {
                     <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Descripcion: {movie.description}</Text>
                       <br/>
                       <AspectRatio maxW='400px' ratio={4 / 3}>
-                        <Image src={movie.movie_banner} alt='banner' objectFit='cover' />
+                        <Image justifyItems={'center'}src={movie.movie_banner} alt='banner' objectFit='cover' />
                       </AspectRatio>
                     </BackdropJapanName>
               </Flex>
