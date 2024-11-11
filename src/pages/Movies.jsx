@@ -53,13 +53,7 @@ export default function Movies() {
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}} marginTop={'8px'}>Director: {movie.director}</Text>
                 <Text fontSize={{base:'xs', md:'sm', lg:'md'}}>Producer: {movie.producer}</Text>
                 <BackdropJapanName title={movie.title}>
-                <AspectRatio maxW='560px' ratio={1}>
-                  <video
-                    title={movie.title}
-                    src={movie.trailer}
-                    allowFullScreen
-                  />
-                </AspectRatio>
+
                 </BackdropJapanName>
               </Flex>
             </Box>
