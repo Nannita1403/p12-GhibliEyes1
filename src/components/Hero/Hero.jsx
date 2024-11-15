@@ -1,5 +1,5 @@
 import { Box, Button, Container, createIcon, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import CasaGif from "../public/hero/casa.gif"
+import CasaGif from "/hero/casa.gif"
 import { ThemeContext } from "../../providers/ThemePageProvider";
 import { useContext } from "react";;
 

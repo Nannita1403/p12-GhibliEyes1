@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
-import AboutHayao from "../public/About/AboutHayao.webp";
+import AboutHayao from "/About/AboutHayao.webp";
 
 const About = () => {
   const {light, setLight} = useContext(ThemeContext);

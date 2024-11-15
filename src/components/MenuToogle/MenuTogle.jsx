@@ -26,7 +26,7 @@ export default function MenuToogle() {
             <DesktopNav/>
           </Flex>
           <Box>
-           <Image src={light ? "src/assets/ghibli_logo_black.png" : "src/assets/ghibli_logo_white.png" } 
+           <Image src={light ? "/ghibli_logo_black.webp" : "/ghibli_logo_white.webp" } 
            w= "140px" position= "center" top="20px" left="90px" mr="150px"  alt="Ghibli Studio Logo"/>
           </Box>
         </Flex>
