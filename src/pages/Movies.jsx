@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { movies } from "../providers/data";
-import { AspectRatio, Avatar, Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { AspectRatio, Avatar, Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../providers/ThemePageProvider";
 import { keyframes } from "@emotion/react";
@@ -86,11 +86,12 @@ export default function Movies() {
               justifyContent="center"  alignItems="center" h="300px"   w={{base:'40%', lg:'33%'}}  overflow="hidden">
               <Box
                 as="div"  position="relative" w={'180px'} h={'180px'} 
-                _before={{
-                  content: "''", position: 'relative', display: 'block', width: '300%',  height: '300%',
-                  boxSizing: 'border-box', marginLeft: '-100%',  marginTop: '-100%', borderRadius: '50%', bgColor:`var(--${light ? "light" : "dark"}-mode-text-about)`,
-                  animation:`2.25s ${pulseRing} cubic-bezier(0.355, 0.02, 0.415, 0.855) -0.3s infinite`,
-                }}>
+                // _before={{
+                //   content: "''", position: 'relative', display: 'block', width: '300%',  height: '300%',
+                //   boxSizing: 'border-box', marginLeft: '-100%',  marginTop: '-100%', borderRadius: '50%', bgColor:`var(--${light ? "light" : "dark"}-mode-text-about)`,
+                //   animation:`2.25s ${pulseRing} cubic-bezier(0.355, 0.02, 0.415, 0.855) -0.3s infinite`,
+                // }}
+                >
                 <Avatar src={movie.gif} size="full" position="absolute" top={0} />
               </Box>
             </Flex>
@@ -107,9 +108,9 @@ export default function Movies() {
       <Box marginX={'auto'} paddingY={'20px'} paddingX={{md:'24px', xl:'300px'}}>
         {/* Section Title */}
         <Flex id="sectionTitle" alignContent={'center'} flexDirection={'column'} 
-        alignItems={'center'} marginBottom={'24px'} >
+        alignItems={'center'} marginBottom={'12px'} >
         <Text textStyle={'sm'} > MASTERPIECES </Text>
-        <Text fontFamily={`var(--font-family-title)`} fontSize={{base:'3xl', md:'5xl'}} fontWeight={'700'}
+        <Text fontFamily={`var(--font-family-title)`} fontSize={{base:'2xl', md:'4xl'}} fontWeight={'700'}
         borderBottomWidth={'8px'} borderColor={`var(--color-teal-400)`}> Movies </Text>
         </Flex>
 
