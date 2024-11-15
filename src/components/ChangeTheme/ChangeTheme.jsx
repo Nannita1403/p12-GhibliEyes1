@@ -8,7 +8,7 @@ const ChangeTheme = () => {
  const {light, setLight} = useContext(ThemeContext);
 
   return (
-    <Image src={light ? "../public/iconLight.png" : "../public/op2.png"} 
+    <Image src={light ? "/iconLight.png" : "/op2.png"} 
       alt= "cambiar tema" w= "40px" 
       position= "absolute" top="10px" right="5px" transition="all 0.3s"
       cursor= "pointer" _hover={{ transform: "scale(1.3)" }}
