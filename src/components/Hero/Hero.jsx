@@ -1,7 +1,8 @@
 import { Box, Button, Container, createIcon, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import CasaGif from "../../assets/hero/casa.gif"
+import CasaGif from "../public/hero/casa.gif"
 import { ThemeContext } from "../../providers/ThemePageProvider";
-import { useContext } from "react";
+import { useContext } from "react";;
+
 
 const Arrow = createIcon({
   displayName: 'Arrow',
