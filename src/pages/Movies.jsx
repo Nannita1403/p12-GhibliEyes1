@@ -40,7 +40,7 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 2).map((movie, i) => {
         const isReversed = i % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'} maxH={{base:'230px', md:'250px'}}
+          <Flex id="Movie Box" key={movie.id} display={'flex'} maxH={{base:'230px', md:'git250px'}}
           direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1000px'} paddingX={{base:'10px', md:'50px', lg:'120px'}} 
           alignContent={'space-between'} justifyContent={'space-evenly'}  alignItems={'center'} >
             {/* Box Movie detail */}
