@@ -14,7 +14,7 @@ const Error = () => {
           <Image src={ErrorImg} alt='Error Fetching ⚠️'
           pos='relative' w='100%'/>
         </Box>
-        <Flex  paddingTop='300px' flexDir='column' justify='center'
+        <Flex  paddingTop='260px' flexDir='column' justify='center'
         alignItems='center' pos='absolute'>
           <Text as='b'fontSize='7vw' letterSpacing='1px'> Oops!</Text>
           <Text as='b'fontSize='5vw'letterSpacing='1px'> 404 error</Text>
