@@ -40,7 +40,7 @@ export default function Movies() {
       {movies.slice(startIndex, startIndex + 2).map((movie, i) => {
         const isReversed = i % 2 === 0;
         return (
-          <Flex id="Movie Box" key={movie.id} display={'flex'} maxH={'250px'}
+          <Flex id="Movie Box" key={movie.id} display={'flex'} maxH={{base:'230px', md:'250px'}}
           direction={`${isReversed ? "row-reverse" : "row"}`} maxW={'1000px'} paddingX={{base:'10px', md:'50px', lg:'120px'}} 
           alignContent={'space-between'} justifyContent={'space-evenly'}  alignItems={'center'} >
             {/* Box Movie detail */}
@@ -105,10 +105,10 @@ export default function Movies() {
   return (
     <Box id="movies" color={`var(--${light ? "light" : "dark"}-mode-text-about)`} 
     paddingY={{base:'70px'}} h={'100svh'}>
-      <Box marginX={'auto'} paddingY={'20px'} paddingX={{md:'24px', xl:'300px'}}>
+      <Box     marginX={'auto'} paddingY={'20px'} paddingX={{md:'24px', xl:'300px'}}>
         {/* Section Title */}
         <Flex id="sectionTitle" alignContent={'center'} flexDirection={'column'} 
-        alignItems={'center'} marginBottom={'12px'} >
+        alignItems={'center'} marginBottom={{ md:'15px'}} >
         <Text textStyle={'sm'} > MASTERPIECES </Text>
         <Text fontFamily={`var(--font-family-title)`} fontSize={{base:'2xl', md:'4xl'}} fontWeight={'700'}
         borderBottomWidth={'8px'} borderColor={`var(--color-teal-400)`}> Movies </Text>

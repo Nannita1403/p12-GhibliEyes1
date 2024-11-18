@@ -9,13 +9,15 @@ const About = () => {
     <>
     <Flex  id="about" bg={`var(--${light ? "light" : "dark"}-mode-bg)`}
     paddingTop={'30px'} 
+    h={'100svh'} w={'100%'}  overflowX={'hidden'} display={'flex'} 
+    alignItems={{base:'flex-start'}} justifyContent={'center'}
     // maxHeight={'750px'}
     >
-      <Flex max-width={'1280px'} paddingX={'20px'} paddingy={'0px'} paddingTop={'60px'} wrap={{base:'wrap', md:'nowrap'}}
-      // maxH={{xl:'1000px'}}
+      <Flex  paddingX={'20px'} paddingy={'0px'}  h={'95svh'} 
+      paddingTop={'60px'} paddingBottom={'20px'} wrap={{base:'wrap', md:'nowrap'}}
       >
         {/* Columna Izquiera */}
-         <Box id="ColIzq" width={{ base:'full', md:'1/2'}}>
+         <Box id="ColIzq" width={{ base:'full', md:'1/2'}} overflowX={'hidden'}  scrollBehavior={'auto'}>
             {/* Titulo*/}
       <Box id="titles" color={`var(--${light ? "light" : "dark"}-mode-text-about)`}
       paddingX={'24px'} paddingY={'16px'} marginBottom={'24px'} borderLeftWidth={'8px'} borderColor={`var(--color-teal-400)`} >
@@ -69,7 +71,9 @@ const About = () => {
         </Box>     
          </Box>
         {/* Columna Derecha Imagen */}
-        <Box id="ColDer" width={{ base:'full', md:'1/2'}} maxH={{md:'700px'}} paddingX={'16px'} marginBottom={'5'}  overflow={'hidden'}>
+        <Box id="ColDer" width={{ base:'full', md:'1/2'}} 
+        // maxH={{md:'600px'}} 
+        paddingX={'16px'} overflow={'hidden'}>
             <Image
               src={AboutHayao} alt="Image Hayao Gibli Studio"
               objectFit={'cover'} width={{base:'full'}} height={'full'} borderRadius={'12px'} />
