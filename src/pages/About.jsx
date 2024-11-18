@@ -8,9 +8,12 @@ const About = () => {
   return (
     <>
     <Flex  id="about" bg={`var(--${light ? "light" : "dark"}-mode-bg)`}
-    paddingTop={'30px'} maxHeight={'750px'}>
+    paddingTop={'30px'} 
+    // maxHeight={'750px'}
+    >
       <Flex max-width={'1280px'} paddingX={'20px'} paddingy={'0px'} paddingTop={'60px'} wrap={{base:'wrap', md:'nowrap'}}
-      maxH={'1000px'}>
+      // maxH={{xl:'1000px'}}
+      >
         {/* Columna Izquiera */}
          <Box id="ColIzq" width={{ base:'full', md:'1/2'}}>
             {/* Titulo*/}
